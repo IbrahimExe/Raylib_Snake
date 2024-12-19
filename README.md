@@ -57,6 +57,8 @@ This was a Project done for my VGP230 2D Games Programming class.
 
 - A major issue I wasnt able to fix was that when the snake collects the power-up, and has to go through it's own body to get to the next fruit, it dissapears and ends the game, I belive this it to do with the checking of where the snakes body is vs where it will be.
 
+- Other improvements I wanted to make was to make the code Modular and spereate the BFS into its own header and .cpp files in order to make it more organised and better.
+
 - Maybe even implement another algorithm, such as A* to improve the power-up. 
 
 - Perhaps even re-create this simple game and expand it in a game engine such as Unity! 
