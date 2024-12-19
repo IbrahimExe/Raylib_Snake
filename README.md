@@ -3,9 +3,14 @@
 
 The game is the same one you know and love!
 
-However, this one has an implementation of a special power-up to help you be the longest snake of all! 
+However, this one has an implementation of a special power-up to help you be the longest snake of all!
+
+This was a Project done for my VGP230 2D Games Programming class.
 
 ### The game makes use of the Depth First Search Algorithm to incorporate a pathfinding method to create a power-up that guides the player to the next fruit automatically!
+
+![Snake_Intro](https://github.com/user-attachments/assets/12fb0ce5-6b1a-48ef-89ea-d45f66537719)
+
 
  ## **Features**
 
@@ -45,7 +50,12 @@ However, this one has an implementation of a special power-up to help you be the
 
 - Moreover, the introduction to and attempt at the implementation of a pathfinding algorithm was challenging, but fun to do, allowing me to see why they are so important not only in games but in other applications as well!
 
+## Educational Takeaways:
 - Although implemented, it's not perfect, therefore in terms of improvements, I hope to make it smoother to the point where the player is able to understand that they've moved to the fruit better.
+
+- Animation improvements through the change of color or speed when the power-up is picked up would help as well.
+
+- A major issue I wasnt able to fix was that when the snake collects the power-up, and has to go through it's own body to get to the next fruit, it dissapears and ends the game, I belive this it to do with the checking of where the snakes body is vs where it will be.
 
 - Maybe even implement another algorithm, such as A* to improve the power-up. 
 
