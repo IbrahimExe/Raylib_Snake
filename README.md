@@ -5,45 +5,48 @@ The game is the same one you know and love!
 
 However, this one has an implementation of a special power-up to help you be the longest snake of all! 
 
-### The game makes use of the Depth First Search Algorithm to !
+### The game makes use of the Depth First Search Algorithm to incorporate a pathfinding method to create a power-up that guides the player to the next fruit automatically!
 
  ## **Features**
 
-  - **Player Movement:** Left & Right movements with a very basic and simple gravity implementation to create a jump!
+  - **Player Movement:** The game includes very basic movements, such as not being able to go back on yourself!
 
-![Animation](https://github.com/user-attachments/assets/593cae00-ca5a-465a-958e-5e057d5bb520)
+  - **Grid-Based System and Speed:**
+  - - The game world is divided into a grid, where each cell corresponds to a fixed square size, the snakes' movement is also mapped to this, moving square by square at a specified frame rate to control general speed.
+  - - The snake and all other objects (fruit, power-ups) move and interact based on this grid structure and take up an entire grid square.
 
-  - **Object-Oriented Programming (OOP):** The game is designed with classes for Player, Platform, Enemy & Item. Each class is in its own file for modularity, making the code manageable and extendable.
+  - **BFS Pathfinding:**
+  - - When a power-up is collected, the snake activates BFS pathfinding to autonomously reach the next fruit.
+  - - BFS ensures the shortest path is calculated using a queue and visited nodes.
+  - - The pathfinding is implemented to navigate the grid, avoiding walls and the snake's own body.
+   
+ ## Technical Details
+- **Grid System:**
 
-  - **Game States:** The game also includes different states (Start, Playing & GameOver) to handle transitions between menus and gameplay.
+   The game divides the screen into a grid of cells, with each cell having a fixed size defined by SQUARE_SIZE.
+   Objects like the snake, fruit, and power-ups are positioned at the centre of these grid cells for consistent movement and collision detection.
+   Movement updates the snake’s position by moving it to adjacent cells, ensuring precise alignment with the grid.
 
-  - **Collision Detection:** Raylib's simple 2D collision detection is used to detect interactions between the player and other game objects (Such as the platforms or coin) *as well as* for menu collisions between the mouse and buttons!
+- **BFS Pathfinding Algorithm:**
 
-![Collisions Respawn](https://github.com/user-attachments/assets/ea082087-5930-42c6-aed4-2c3cbfdfba19)
+    - Algorithm Overview:
+        The BFS algorithm is triggered when the snake collects a power-up.
+        The snake's head is treated as the starting point, and the fruit's position is the goal.
+        BFS uses a queue to explore neighbouring cells in all directions until the fruit is reached.
+        A parent map is used to trace the shortest path back to the starting point.
 
-## **Using Raylib**
+    - Implementation:
+        Grid cells are marked as visited during traversal to avoid reprocessing.
+        Once the path is found, it is stored in a queue (bfsPath), which the snake follows step by step.
+        Collision checks ensure that walls and the snake's body are avoided during pathfinding.
 
-- I use raylib to initialize the game window and UI handle input.
+## Educational Takeaways:
+- This project has further improved my overall familiarity with the Raylib library, and its power in not only the rendering of the game but its included functions as well that all help improve programming for games like these!
 
-![StartMenu](https://github.com/user-attachments/assets/cba4dfd1-2be4-4c6e-a9a7-c6911951e754)
+- Moreover, the introduction to and attempt at the implementation of a pathfinding algorithm was challenging, but fun to do, allowing me to see why they are so important not only in games but in other applications as well!
 
-- Render and Draw all game objects, including the player, platforms, enemies and items as simple polygonal shapes.
+- Although implemented, it's not perfect, therefore in terms of improvements, I hope to make it smoother to the point where the player is able to understand that they've moved to the fruit better.
 
-![GamePlay](https://github.com/user-attachments/assets/18d7831a-d919-4aaf-9581-7dcd6e63295b)
+- Maybe even implement another algorithm, such as A* to improve the power-up. 
 
-- Detect collisions and update positions based on player input and gravity.
-
-- Manage & set frame updates, game state transitions, and User Interface elements.
-
-## **Learing Take-Aways & Future Improvements**
-
-- This project has given me a great understanding of Raylib and how to use other libraries in general, but an even bigger understanding as to how game engines operate and how modularisation is extremley important in even simple games.
-
-- I hope to perhaps revisit this game in order to add more levels with more platform configurations.
-
-- Introduce additional obstacles and perhpas even power-ups.
-
-- Maybe even re-create this simple game and expand it in a game engine such as Unity! 
-
-
-
+- Perhaps even re-create this simple game and expand it in a game engine such as Unity! 
