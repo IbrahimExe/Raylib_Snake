@@ -1,4 +1,4 @@
-# A Snake close created using Raylib & the BFS Algorithm!
+# A Snake clone created using Raylib & the BFS Algorithm!
 ### Hello! Here is a basic re-creation of the Snake game built in C++ using the Raylib library!
 
 The game is the same one you know and love!
